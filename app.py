@@ -16,7 +16,6 @@ if st.button('Download'):
                 ys.download()
                 st.success('Video download complete!')
             elif download_type == 'MP3':
-                # Get audio-only stream
                 ys = yt.streams.filter(only_audio=True).first()
                 ys = yt.streams.get_audio_only()
                 ys.download(mp3=True)
