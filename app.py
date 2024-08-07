@@ -48,8 +48,7 @@ if st.button('Phân tích'):
             st.write(f"**Title:** {yt.title}")
             if download_type == 'Video':
                 ys = yt.streams.get_highest_resolution()
-                # Start download
-                ys.download(filename='downloaded_video.mp4')
+                ys.download('C:\Cty\AI\Demo\api\tool',filename='downloaded_video.mp4')
                 with open('downloaded_video.mp4', 'rb') as f:
                     st.download_button('Download Video', f, file_name='downloaded_video.mp4')
                 st.success('Video complete !')
@@ -58,7 +57,7 @@ if st.button('Phân tích'):
                 ys.download(filename='downloaded_audio.mp3')
                 with open('downloaded_audio.mp3', 'rb') as f:
                     st.download_button('Download MP3', f, file_name='downloaded_audio.mp3')
-                st.success('MP3 complete !')
+                st.success('MP3 complete!')
             elif download_type == 'Playlists':
                 pl = Playlist(url)
                 for index, video in enumerate(pl.videos):
